@@ -89,13 +89,13 @@ export class App extends Component {
   }
 
   render() {
-    const { serach, images, isError, isLoading, isModalVisible, showImage } =
+    const { search, images, isError, isLoading, isModalVisible, showImage } =
       this.state;
 
     return (
       <div className="App">
         <SearchBar
-          value={serach}
+          value={search}
           onChange={this.setSearch}
           onSubmit={this.loadImages}
         />

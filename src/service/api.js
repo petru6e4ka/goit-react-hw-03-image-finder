@@ -5,6 +5,8 @@ const API_KEY = '30026441-2c163c7ce375dc3616a167dea';
 const PER_PAGE = 12;
 
 const loadImages = async (term, page) => {
+  if (!term.trim()) return { isLoading: false, isError: false, images: [] };
+
   try {
     const response = await axios.get(
       `${URL}?q=${term}&page=${page}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=${PER_PAGE}`
